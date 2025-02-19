@@ -77,9 +77,53 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ### บันทึกผลการทดลอง 
 ```html
 [บันทึกโค้ด ที่นี่]
-```
+```<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <p><button onclick="alert('วิศวะ กำจร')">แสดงชื่อนักศึกษา</button></p>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2">แสดงวันที่ปัจจุบัน</button>
+    <p id="dateDisplay"></p>
+
+    <!-- ทดสอบ External JavaScript (ปุ่มที่ 3) -->
+    <button onclick="showTime()">แสดงเวลาปัจจุบัน (External)</button>
+    <p id="timeDisplay"></p>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.getElementById('btn2').onclick = function() {
+            const currentDate = new Date();
+            document.getElementById('dateDisplay').innerHTML = "วันที่ปัจจุบัน: " + currentDate.toLocaleDateString();
+        };
+    </script>
+    <br><br>
+
+    <!-- กล่องข้อความและปุ่มแสดงข้อความ -->
+    <label for="message">กรอกข้อความ:</label>
+    <input type="text" id="message" />
+    <button onclick="displayMessage()">แสดงข้อความ</button>
+    <p id="messageDisplay"></p>
+
+    <script>
+        function displayMessage() {
+            const message = document.getElementById('message').value;
+            document.getElementById('messageDisplay').innerHTML = "ข้อความที่กรอก: " + message;
+        }
+    </script>
+</body>
+</html>
+    <script src="script.js"></script>
+</body>
+</html>
 [รูปผลการทดลองที่ 1]
-  
+![image](https://github.com/user-attachments/assets/74c9d97d-11a8-4358-a63a-81c757cc20de)
+
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
 
