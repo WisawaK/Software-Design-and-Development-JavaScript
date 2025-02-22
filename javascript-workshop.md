@@ -75,9 +75,12 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
    - มีช่องกรอกข้อความ
    - มีปุ่มเมื่อคลิกแล้วจะแสดงข้อความที่กรอกในช่องข้อความ  (สามารถใช้ document.getElementById('id ของ textbox').value เพื่อดึงข้อมูลในช่อง)
 ### บันทึกผลการทดลอง 
+[รูปผลการทดลองที่ 1]
+![image](https://github.com/user-attachments/assets/33636fd0-be8d-4750-9c7c-a0e5551c68e0)
+
 ```html
 [บันทึกโค้ด ที่นี่]
-```<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
@@ -85,7 +88,8 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 </head>
 <body>
     <!-- Inline JavaScript -->
-    <p><button onclick="alert('วิศวะ กำจร')">แสดงชื่อนักศึกษา</button></p>
+    <button onclick="document.getElementById('nameDisplay').innerText = 'วิศวะ กำจร'">แสดงชื่อนักศึกษา</button>
+    <p id="nameDisplay"></p>
 
     <!-- ทดสอบ Internal JavaScript -->
     <button id="btn2">แสดงวันที่ปัจจุบัน</button>
@@ -121,9 +125,20 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
     <script src="script.js"></script>
 </body>
 </html>
-[รูปผลการทดลองที่ 1]
-![image](https://github.com/user-attachments/assets/74c9d97d-11a8-4358-a63a-81c757cc20de)
 
+[โค้ดscript.js]
+function showTime() {
+    const now = new Date();
+    const formattedTime = now.toLocaleTimeString('th-TH');
+    document.getElementById('timeDisplay').innerText = 'เวลาปัจจุบัน: ' + formattedTime;
+  }
+  
+ 
+  function displayInput() {
+    const inputText = document.getElementById('userInput').value;
+    document.getElementById('output').innerText = 'คุณกรอกข้อความ: ' + inputText;
+  }
+  
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
 
